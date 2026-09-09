@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TalentPulse AI - Academic College Project Report</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 15mm 18mm 15mm;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            color: #0f172a;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .header-box {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .header-box h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 0 6px 0;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+        .header-box .subtitle {
+            font-size: 13px;
+            color: #a5b4fc;
+            font-weight: 600;
+            margin: 0 0 14px 0;
+        }
+        .header-box .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 12px;
+            font-size: 11px;
+            color: #cbd5e1;
+        }
+        .header-box .meta-grid strong {
+            color: #ffffff;
+        }
+        h2 {
+            font-size: 16px;
+            color: #1e1b4b;
+            border-bottom: 2px solid #6366f1;
+            padding-bottom: 5px;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            font-size: 13px;
+            color: #334155;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 11px;
+            color: #334155;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        ul, ol {
+            font-size: 11px;
+            color: #334155;
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        .table-container {
+            margin: 12px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10.5px;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 7px 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4338ca;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 12px 0;
+        }
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+        }
+        .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1e1b4b;
+            margin-bottom: 4px;
+        }
+        .formula-box {
+            background-color: #eef2ff;
+            border-left: 4px solid #4f46e5;
+            padding: 10px 14px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #1e1b4b;
+            margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .footer {
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+            text-align: center;
+            font-size: 10px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">
+        <h1>TalentPulse AI: HR Recruitment Assistant</h1>
+        <div class="subtitle">Academic Project Final Report & System Documentation</div>
+        <div class="meta-grid">
+            <div><strong>Domain:</strong> Artificial Intelligence & Web NLP</div>
+            <div><strong>Architecture:</strong> Agent + RAG Vector Retrieval</div>
+            <div><strong>Deployment:</strong> Single-Page App (SPA) / PowerShell Server</div>
+        </div>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+        <strong>TalentPulse AI</strong> is an advanced, production-grade Artificial Intelligence HR Recruitment Assistant designed to automate and enhance talent acquisition workflows. Modern HR teams face significant challenges screening hundreds of resumes per job opening, leading to evaluation delays, subjective bias, and unstandardized candidate matching. TalentPulse AI addresses these challenges by offering an interactive recruitment workspace equipped with multi-stage resume parsing, an explainable 0-100% match scoring engine, automated personalized interview question generation, side-by-side candidate comparisons, and an AI conversational agent.
+    </p>
+
+    <h2>2. Problem Statement & Project Objectives</h2>
+    <p>
+        Traditional recruitment systems suffer from three primary bottlenecks:
+    </p>
+    <ol>
+        <li><strong>Manual Resume Screening Overhead:</strong> Recruiters spend an average of 6-10 seconds per resume, increasing the likelihood of missing highly qualified candidates.</li>
+        <li><strong>Black-Box Automation:</strong> Traditional keyword search tools fail to explain <em>why</em> a candidate matches or what specific qualification gaps exist.</li>
+        <li><strong>Unprepared Technical Interviews:</strong> Interviewers often ask generic questions that fail to cross-examine specific claims made on a candidate's resume.</li>
+    </ol>
+    <p>
+        <strong>Project Objectives:</strong>
+    </p>
+    <ul>
+        <li>Develop a web-based workspace enabling recruiters to create jobs and ingest resumes via native file upload.</li>
+        <li>Implement a multi-factor transparent matching engine providing detailed 0-100% score breakdowns.</li>
+        <li>Automate candidate interview preparation with customized questions and a 30-minute interview agenda.</li>
+        <li>Integrate client-side <code>localStorage</code> data persistence ensuring zero data loss upon page refresh.</li>
+        <li>Design a modern, accessible user interface with a collapsible sidebar and responsive layout.</li>
+    </ul>
+
+    <h2>3. System Architecture & Core Modules</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">Module 1: Resume Ingestion & Parsing</div>
+            <p>Processes PDF, DOC, DOCX, and TXT files using native file browser APIs (`FileReader`). Extracts candidate contact info, total experience, skills, summary, and work history.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Module 2: Explainable Match Engine</div>
+            <p>Calculates multi-factor candidate scores against job descriptions using configurable weights. Generates transparent score breakdowns and extracts exact resume evidence snippets.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Module 3: Interview Question Generator</div>
+            <p>Synthesizes personalized technical, behavioral, and resume-claim questions. Provides evaluation rationales, expected answer signals, and a 30-minute interview breakdown.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Module 4: AI Agent Workspace & Tools Router</div>
+            <p>Conversational assistant capable of handling natural language queries ("Rank candidates for Senior React Engineer") with visible tool execution traces.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Module 5: Side-by-Side Candidate Comparison</div>
+            <p>Enables recruiters to select any two candidates and render a side-by-side comparison of skills, experience, and match metrics.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Module 6: Data Persistence & CRUD Operations</div>
+            <p>Includes full Edit and Remove capabilities for Candidates and Jobs, automatically synchronized with browser `localStorage`.</p>
+        </div>
+    </div>
+
+    <h2>4. Match Scoring Mathematical Model</h2>
+    <p>
+        The candidate matching engine evaluates alignment using a weighted linear combination model:
+    </p>
+    <div class="formula-box">
+        Overall Match Score (S) = &sum; (Weight_i &times; Score_i)<br>
+        S = (35% &times; Required_Skills) + (20% &times; Exp_Years) + (15% &times; Responsibilities_Fit) + (10% &times; Domain_Fit) + (10% &times; Preferred_Skills) + (10% &times; Education & Certs)
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Scoring Factor</th>
+                    <th>Default Weight</th>
+                    <th>Evaluation Criteria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Required Skills Fit</strong></td>
+                    <td>35%</td>
+                    <td>Exact and fuzzy keyword matching of mandatory job technical skills.</td>
+                </tr>
+                <tr>
+                    <td><strong>Experience Duration</strong></td>
+                    <td>20%</td>
+                    <td>Candidate total experience years compared against job minimum threshold.</td>
+                </tr>
+                <tr>
+                    <td><strong>Responsibilities Alignment</strong></td>
+                    <td>15%</td>
+                    <td>Textual and semantic overlap between candidate resume achievements and job responsibilities.</td>
+                </tr>
+                <tr>
+                    <td><strong>Domain Alignment</strong></td>
+                    <td>10%</td>
+                    <td>Industry domain keywords (e.g., Enterprise SaaS, AI, Cloud Infrastructure).</td>
+                </tr>
+                <tr>
+                    <td><strong>Preferred Skills Fit</strong></td>
+                    <td>10%</td>
+                    <td>Evaluation of secondary, nice-to-have technical competencies.</td>
+                </tr>
+                <tr>
+                    <td><strong>Education & Certifications</strong></td>
+                    <td>10%</td>
+                    <td>Verification of academic degrees and technical certifications (e.g., AWS, PMP).</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>5. Technical Implementation & Stack</h2>
+    <ul>
+        <li><strong>Frontend Framework:</strong> Single-Page Application (SPA) built with React 18, React DOM, and Babel Standalone in-browser compilation.</li>
+        <li><strong>Styling & Motion UI:</strong> Tailwind CSS for glassmorphism styling, CSS Keyframes (`fadeIn`, `slideRight`, `pulseGlow`), and custom transition curves.</li>
+        <li><strong>Iconography & Typography:</strong> Lucide Icon library and Google Fonts (Plus Jakarta Sans & JetBrains Mono).</li>
+        <li><strong>Backend Web Server:</strong> Standalone PowerShell script (`server.ps1`) utilizing `System.Net.HttpListener` on port `5174` (with automatic port fallback 5173-5185). Configured with CORS and `Cache-Control: no-cache` headers.</li>
+        <li><strong>Storage & State Engine:</strong> Browser `localStorage` for zero-backend data persistence across page reloads.</li>
+        <li><strong>Error Resilience:</strong> React `<ErrorBoundary>` component catching unexpected runtime errors and presenting a friendly recovery UI.</li>
+    </ul>
+
+    <h2>6. Ethical & Responsible AI Framework</h2>
+    <p>
+        TalentPulse AI adheres to strict Responsible AI guidelines. Candidate evaluations are performed strictly against job-relevant skills, documented experience, and verified resume evidence. Demographic attributes such as age, gender, race, location, or educational institution prestige are explicitly excluded from score calculations to ensure unbiased talent acquisition.
+    </p>
+
+    <h2>7. Conclusion & Future Enhancements</h2>
+    <p>
+        The **TalentPulse AI** platform successfully demonstrates a complete, production-grade recruitment assistant application. By combining automated resume parsing, explainable match scoring, personalized question generation, interactive chat, and persistent local storage, it significantly streamlines candidate evaluation for hiring managers.
+    </p>
+    <p>
+        <strong>Future Enhancements:</strong> Integrations with live PostgreSQL `pgvector` databases for enterprise semantic search, automated video interview sentiment parsing, and direct integration with Applicant Tracking Systems (ATS) like Greenhouse and Lever.
+    </p>
+
+    <div class="footer">
+        TalentPulse AI Academic Project Documentation &bull; Prepared for College Submission &bull; Page 1 of 1
+    </div>
+
+</body>
+</html>
